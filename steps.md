@@ -78,3 +78,21 @@
    sudo amazon-linux-extras install epel -y
    sudo yum install -y stress
    stress --cpu 2 --timeout 300
+   
+   ---
+   
+## 🔎 Observe
+- CPU utilization rises
+- CloudWatch Alarm triggers
+- ASG scales up new instances
+- SNS sends email notification
+- Open ALB DNS → refresh to confirm load balancing
+
+---
+
+## ✅ Verification
+- ALB distributes traffic across multiple EC2s
+- ASG scales from 2 → 4 when CPU > 70%
+- CloudWatch Alarm triggers scaling
+- SNS email received on scaling event
+
